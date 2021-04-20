@@ -4,7 +4,7 @@
 
 @section('content')
 <div id="site-section">
-    <div class="container">
+    <div class="container_own">
     <div id="home">
         <div class="search-area">
         <div class="search-container">

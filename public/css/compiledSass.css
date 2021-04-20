@@ -138,12 +138,12 @@ table {
   box-sizing: border-box;
 }
 
-.container {
+.container_own {
   width: 100%;
   margin: 0 auto;
 }
 
-.container:after,
+.container_own:after,
 .row:after {
   content: "";
   display: table;
@@ -164,7 +164,7 @@ table {
 }
 
 @media only screen and (min-width: 0px) {
-  .container {
+  .container_own {
     width: 95%;
     max-width: 1200px;
   }
@@ -266,7 +266,7 @@ table {
   }
 }
 @media only screen and (min-width: 451px) {
-  .container {
+  .container_own {
     width: 95%;
     max-width: 1200px;
   }
@@ -368,7 +368,7 @@ table {
   }
 }
 @media only screen and (min-width: 768px) {
-  .container {
+  .container_own {
     width: 95%;
     max-width: 1200px;
   }
@@ -470,7 +470,7 @@ table {
   }
 }
 @media only screen and (min-width: 1008px) {
-  .container {
+  .container_own {
     width: 95%;
     max-width: 1200px;
   }
@@ -572,7 +572,7 @@ table {
   }
 }
 @media only screen and (min-width: 1300px) {
-  .container {
+  .container_own {
     width: 95%;
     max-width: 1200px;
   }
@@ -855,6 +855,14 @@ header nav a:hover {
   border-radius: 3px;
   font-weight: 300;
   margin: 0 auto;
+}
+
+.loginPage-form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
 }
 
 #admin-section {

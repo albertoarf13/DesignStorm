@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-.container {
+.container_own {
   width: 100%;
   margin: 0 auto;
 }
 
-.container:after,
+.container_own:after,
 .row:after {
   content: "";
   display: table;
@@ -27,7 +27,7 @@
   display: inline-block;
 }
 @media #{$breakpoint-xs} {
-  .container {
+  .container_own {
     width: 95%;
     max-width: $grid-max-width;
   }
@@ -42,7 +42,7 @@
   }
 }
 @media #{$breakpoint-small} {
-  .container {
+  .container_own {
     width: 95%;
     max-width: $grid-max-width;
   }
@@ -57,7 +57,7 @@
   }
 }
 @media #{$breakpoint-medium} {
-  .container {
+  .container_own {
     width: 95%;
     max-width: $grid-max-width;
   }
@@ -72,7 +72,7 @@
   }
 }
 @media #{$breakpoint-large} {
-  .container {
+  .container_own {
     width: 95%;
     max-width: $grid-max-width;
   }
@@ -87,7 +87,7 @@
   }
 }
 @media #{$breakpoint-xl} {
-  .container {
+  .container_own {
     width: 95%;
     max-width: $grid-max-width;
   }

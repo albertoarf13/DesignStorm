@@ -17,18 +17,8 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-Route::get('/register', function () {
-    return view('pages/register');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/login', function () {
-    return view('pages/login');
-});
-
-Route::get('/results', function () {
-    return view('pages/results');
-});
-
-Route::get('/account', function () {
-    return view('account/dashboard');
-});
+require __DIR__.'/auth.php';
