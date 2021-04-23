@@ -14,14 +14,22 @@ class PageController extends Controller
         return view('pages/index', compact('user'));
     }
 
-    public function results(Request $request){
+    public function searchPOST(Request $request){
+        
+        $searchTerm = $request->search;
+
+        return redirect('search/'.$searchTerm);
+    }
+
+    public function search(Request $request, $search){
 
         $client = new Client();
 
         $res = $client->request('GET', "https://api.unsplash.com/search/photos", [
             "query"=>[
-                "query" => $request->search,
-                "client_id" => "km-H2RmtWiVYODHf2KdHO5a7b-Zohpui70Mah0EI2uo"
+                "query" => $search,
+                "client_id" => "km-H2RmtWiVYODHf2KdHO5a7b-Zohpui70Mah0EI2uo",
+                "per_page" => 20
             ]
         ]);
 
@@ -29,9 +37,7 @@ class PageController extends Controller
         $posts = json_decode($posts);
         $posts = $posts->results;
 
-        //return $posts;
-
         $user = Auth::user();
-        return view('pages/results', compact('user', 'posts'));
+        return view('pages/results', compact('user', 'posts', 'search'));
     }
 }

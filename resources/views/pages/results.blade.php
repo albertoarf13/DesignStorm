@@ -8,51 +8,24 @@
     <div id="results">
       <div>
         <div class="search-container">
-          <input class="search" type="text" value="Results" placeholder="Search">
+            <form action="/search" method="POST">
+            @csrf
+                <input name="search" class="search" value="{{$search}}" placeholder="Search" type="text">
+            </form>
         </div>
         <div class="boxes">
           <div class="row">
-            
-          <!--
-            <div class="col-md-3">
-              <div class="box">
-                <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                  <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="box">
-                <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                  <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="box">
-                <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                  <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="box">
-                <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                  <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                </div>
-              </div>
-            </div>
-          -->
-
-            
 
             @foreach($posts as $post)
 
               <div class="col-md-3">
                 <div class="box">
-                  <div style="position: relative; background: url('{{$post->urls->regular}}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+                  <div style="position: relative; background: url('{{$post->urls->regular}}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px; margin-bottom: 10px;">
+                    <a href="/projects/addimage/{{$post->id}}">
+                      <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+                    </a>
                   </div>
+                  <h4>{{$post->user->username}}</h4>
                 </div>
               </div>
 

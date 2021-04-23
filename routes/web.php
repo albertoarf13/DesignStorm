@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AccountController;
 
 /*
@@ -17,10 +18,12 @@ use App\Http\Controllers\AccountController;
 
 Route::get('/', [PageController::class, 'index']);
 
-Route::post('/results', [PageController::class, 'results']);
+Route::post('/search', [PageController::class, 'searchPOST']);
+Route::get('/search/{search}', [PageController::class, 'search']);
 
 Route::get('/account', [AccountController::class, 'index']);
 
+Route::get('/projects/addimage/{id}', [ProjectController::class, 'addImage']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
