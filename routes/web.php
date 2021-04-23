@@ -17,7 +17,7 @@ use App\Http\Controllers\AccountController;
 
 Route::get('/', [PageController::class, 'index']);
 
-Route::get('/results', [PageController::class, 'results']);
+Route::post('/results', [PageController::class, 'results']);
 
 Route::get('/account', [AccountController::class, 'index']);
 

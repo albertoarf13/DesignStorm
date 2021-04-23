@@ -9,7 +9,10 @@
         <div class="search-area">
         <div class="search-container">
             <h1>DesignStorm</h1>
-            <input class="search" type="text" value="" placeholder="Search">
+            <form action="/results" method="POST">
+            @csrf
+                <input name="search" class="search" type="text" value="" placeholder="Search">
+            </form>
         </div>
         </div>
     </div>

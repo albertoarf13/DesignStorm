@@ -14,14 +14,20 @@ class PageController extends Controller
         return view('pages/index', compact('user'));
     }
 
-    public function results(){
+    public function results(Request $request){
 
         $client = new Client();
 
-        $res = $client->request('GET', 'https://api.unsplash.com/photos/?client_id=km-H2RmtWiVYODHf2KdHO5a7b-Zohpui70Mah0EI2uo');
+        $res = $client->request('GET', "https://api.unsplash.com/search/photos", [
+            "query"=>[
+                "query" => $request->search,
+                "client_id" => "km-H2RmtWiVYODHf2KdHO5a7b-Zohpui70Mah0EI2uo"
+            ]
+        ]);
 
         $posts = $res->getBody();
         $posts = json_decode($posts);
+        $posts = $posts->results;
 
         //return $posts;
 
