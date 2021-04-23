@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/home');
-});
+Route::get('/', [PageController::class, 'index']);
+
+Route::get('/results', [PageController::class, 'results']);
+
+Route::get('/account', [AccountController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

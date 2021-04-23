@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="css/compiledSass.css">
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
