@@ -19,12 +19,24 @@ use App\Http\Controllers\ImageController;
 
 Route::get('/', [PageController::class, 'index']);
 
+
 Route::post('/search', [PageController::class, 'searchPOST']);
 Route::get('/search/{search}', [PageController::class, 'search']);
 
-Route::get('/account', [AccountController::class, 'index']);
 
-Route::get('/projects/image/{id}/add', [ImageController::class, 'addImage']);
+Route::get('/account', [AccountController::class, 'index']);
+Route::get('/account/projects', [ProjectController::class, 'index']);
+Route::get('/account/projects/create', [ProjectController::class, 'create']);
+Route::post('/account/projects', [ProjectController::class, 'store']);
+Route::get('/account/projects/{id}', [ProjectController::class, 'show']);
+Route::get('/account/projects/{id}/edit', [ProjectController::class, 'edit']);
+Route::put('/account/projects/{id}', [ProjectController::class, 'update']);
+Route::delete('/account/projects/{id}', [ProjectController::class, 'destroy']);
+
+
+Route::get('/projects/image/{id}/add', [ImageController::class, 'addImage'])
+->middleware(['auth']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

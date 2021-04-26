@@ -8,22 +8,22 @@ class ProjectController extends Controller
 {
     public function index(){
 
-        return "show all projects";
+        return view('pages/projects/index');
     }
     
     public function create(){
 
-        return "create project";
+        return view('pages/projects/create');
     }
 
     public function show(){
 
-        return "show project";
+        return view('pages/projects/show');
     }
 
     public function edit(){
 
-        return "edit project";
+        return view('pages/projects/edit');
     }
 
     public function update(){
