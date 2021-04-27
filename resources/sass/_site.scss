@@ -221,7 +221,7 @@ header {
     padding: 10px;
     border-radius: 3px;
     font-weight: 300;
-    margin: 0 auto;
+    margin: 0;
     // float: right;
   }
 }
@@ -237,4 +237,19 @@ header {
 
   min-height: 400px;
 
+}
+
+.delete-btn{
+  min-width: 200px;
+  background: rgb(241, 44, 77);
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }

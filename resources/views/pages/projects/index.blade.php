@@ -11,7 +11,7 @@
 
         <div class="row">
           <div class="col-md-10">All of our projects</div>
-          <div class="col-md-2"><a href="/projects/create">Add New Project</a></div>
+          <div class="col-md-2"><a href="/account/projects/create">Add New Project</a></div>
         </div>
 
         <div class="row">
