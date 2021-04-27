@@ -946,6 +946,35 @@ header nav a:hover {
   display: block;
 }
 
+#admin-section table {
+  display: table;
+  width: 100%;
+  margin: 20px 0;
+}
+#admin-section table thead {
+  background-color: grey;
+}
+#admin-section table thead th {
+  border: 1px solid black;
+  color: white;
+}
+#admin-section table tbody td {
+  border: 1px solid black;
+  text-align: center;
+}
+#admin-section table tbody td .edit-btn {
+  font-size: 12px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+}
+#admin-section table th, #admin-section table td {
+  padding: 10px 20px;
+}
+
 * {
   box-sizing: border-box;
 }
