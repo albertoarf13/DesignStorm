@@ -31,7 +31,7 @@ Route::post('/account/projects', [ProjectController::class, 'store']);
 Route::get('/account/projects/{id}', [ProjectController::class, 'show']);
 Route::get('/account/projects/{id}/edit', [ProjectController::class, 'edit']);
 Route::put('/account/projects/{id}', [ProjectController::class, 'update']);
-Route::delete('/account/projects/{id}', [ProjectController::class, 'destroy']);
+Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy']);
 
 
 Route::get('/projects/image/{id}/add', [ImageController::class, 'addImage'])

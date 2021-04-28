@@ -28,7 +28,7 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Website</td>
+                  <td><a href="/account/projects/{id}">Website</a></td>
                   <td><a href="/account/projects/{id}/edit" class="edit-btn">Edit</a></td>
                 </tr>
               </tbody>
