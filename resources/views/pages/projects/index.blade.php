@@ -26,11 +26,16 @@
               </thead>
 
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td><a href="/account/projects/{id}">Website</a></td>
-                  <td><a href="/account/projects/{id}/edit" class="edit-btn">Edit</a></td>
-                </tr>
+
+                @foreach($projects as $project)
+                  <tr>
+                    <td>{{$project->id}}</td>
+                    <td><a href='/account/projects/{{$project->id}}'>{{$project->title}}</a></td>
+                    <td><a href='/account/projects/{{$project->id}}/edit' class="edit-btn">Edit</a></td>
+                  </tr>
+                @endforeach
+
+
               </tbody>
             </table>
           </div>

@@ -3,7 +3,7 @@
 
 @section('content')
 <div>
-  <h1>$Title</h1>
+  <h1>{{$project->title}}</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="box">

@@ -16,7 +16,7 @@
             @method('PUT')
             @csrf
                 <label for="title">Title</label>
-                <input name="title">
+                <input name="title" value="{{$project->title}}">
                 <button type="submit">Save</button>
 
                 <a href="/account/projects/id/delete" class="delete-btn">Delete</a>
