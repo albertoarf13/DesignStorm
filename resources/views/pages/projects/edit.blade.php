@@ -12,14 +12,14 @@
         <div class="row">
           <div class="col-md-12">
             
-            <form action="/account/projects/id" method="POST">
+            <form action="/account/projects/{{$project->id}}" method="POST">
             @method('PUT')
             @csrf
                 <label for="title">Title</label>
                 <input name="title" value="{{$project->title}}">
                 <button type="submit">Save</button>
 
-                <a href="/account/projects/id/delete" class="delete-btn">Delete</a>
+                <a href="/account/projects/{{$project->id}}/delete" class="delete-btn">Delete</a>
             </form>
             
           </div>

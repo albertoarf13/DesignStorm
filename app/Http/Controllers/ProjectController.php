@@ -33,9 +33,13 @@ class ProjectController extends Controller
         return view('pages/projects/edit', compact('project'));
     }
 
-    public function update(){
+    public function update(Request $request, $id){
 
-        return "update project";
+        $project = Project::where('id', $id)->first();
+        $project->title = $request->title;
+        $project->save();
+
+        return redirect('/account/projects');
     }
 
     public function store(Request $request){
@@ -46,12 +50,16 @@ class ProjectController extends Controller
         $project->title = $request->title;
         $project->save();
 
+
         return redirect('/account/projects');
     }
 
-    public function destroy(){
+    public function destroy($id){
 
-        return "destroy project";
+        $project = Project::where('id', $id)->first();
+        $project->delete();
+
+        return redirect('/account/projects');
     }
 
 }
