@@ -37,6 +37,8 @@ Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy'
 // Images
 Route::get('/projects/image/{id}/add', [ImageController::class, 'addImage'])
 ->middleware(['auth']);
+Route::get('/projects/image/{id}/delete', [ImageController::class, 'destroy'])
+->middleware(['auth']);
 
 
 Route::get('/dashboard', function () {

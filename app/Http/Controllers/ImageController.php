@@ -18,4 +18,13 @@ class ImageController extends Controller
 
         return back();
     }
+
+    public function destroy(Request $request, $id){
+        
+        $image = Image::where('id', $id)->first();
+
+        $image->delete();
+
+        return back();
+    }
 }
