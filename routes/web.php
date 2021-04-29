@@ -34,6 +34,7 @@ Route::put('/account/projects/{id}', [ProjectController::class, 'update']);
 Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy']);
 
 
+// Images
 Route::get('/projects/image/{id}/add', [ImageController::class, 'addImage'])
 ->middleware(['auth']);
 

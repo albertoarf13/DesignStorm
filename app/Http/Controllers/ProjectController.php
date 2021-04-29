@@ -23,7 +23,9 @@ class ProjectController extends Controller
 
         $project = Project::where('id', $id)->first();
 
-        return view('pages/projects/show', compact('project'));
+        $images = $project->images;
+
+        return view('pages/projects/show', compact('project', 'images'));
     }
 
     public function edit(Request $request, $id){

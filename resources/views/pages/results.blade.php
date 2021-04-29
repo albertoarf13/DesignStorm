@@ -21,7 +21,12 @@
               <div class="col-md-3">
                 <div class="box">
                   <div style="position: relative; background: url('{{$post->urls->regular}}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px; margin-bottom: 10px;">
-                    <a href="/projects/image/{{$post->id}}/add">
+                    
+                    @php
+                      $encodedUrl = urlencode($post->urls->regular);
+                    @endphp
+                    
+                    <a href="/projects/image/{{$post->id}}/add?url={{$encodedUrl}}">
                       <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
                     </a>
                   </div>
