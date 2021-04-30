@@ -22,16 +22,28 @@
                   <th>id</th>
                   <th>Title</th>
                   <th>Edit</th>
+                  <th>Select</th>
                 </tr>
               </thead>
 
               <tbody>
 
                 @foreach($projects as $project)
+
+                  @php
+                    $selected = false;
+
+                    if($project->id == $request->session()->get('selected_project')){
+                      $selected = true;
+                    }
+                  @endphp
+
+
                   <tr>
                     <td>{{$project->id}}</td>
                     <td><a href='/account/projects/{{$project->id}}'>{{$project->title}}</a></td>
                     <td><a href='/account/projects/{{$project->id}}/edit' class="edit-btn">Edit</a></td>
+                    <td><a href='/account/projects/{{$project->id}}/select' class="{{$selected? 'select-btn-active' : 'select-btn'}}">Select</a></td>
                   </tr>
                 @endforeach
 

@@ -1021,6 +1021,26 @@ header nav a:hover {
   float: right;
 }
 
+.select-btn {
+  font-size: 12px;
+  padding: 10px 20px;
+  background-color: #525252;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.select-btn-active {
+  font-size: 12px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
 }

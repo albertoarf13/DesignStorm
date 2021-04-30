@@ -8,9 +8,12 @@ class ImageController extends Controller
 {
     public function addImage(Request $request, $id){
 
+        if($request->session()->get('selected_project') == NULL)
+            return redirect('/account/projects');
+
         $data = [
             "image_url" => $request->url,
-            "project_id" => 11,
+            "project_id" => $request->session()->get('selected_project'),
             "image_info" => $id
         ];
         

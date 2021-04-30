@@ -32,6 +32,7 @@ Route::get('/account/projects/{id}', [ProjectController::class, 'show']);
 Route::get('/account/projects/{id}/edit', [ProjectController::class, 'edit']);
 Route::put('/account/projects/{id}', [ProjectController::class, 'update']);
 Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy']);
+Route::get('/account/projects/{id}/select', [ProjectController::class, 'select']);
 
 
 // Images

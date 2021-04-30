@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         
         $projects = Auth::user()->projects;
 
-        return view('pages/projects/index', compact('projects'));
+        return view('pages/projects/index', compact('projects', 'request'));
     }
     
     public function create(){
@@ -70,6 +70,15 @@ class ProjectController extends Controller
         $project->deleteRelated();
 
         return redirect('/account/projects');
+    }
+
+    public function select(Request $request, $id){
+
+        $request->session()->put('selected_project', $id);
+
+        return redirect('/account/projects');
+
+
     }
 
 }
