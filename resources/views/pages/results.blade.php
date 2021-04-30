@@ -27,7 +27,7 @@
                     @endphp
                     
                     <a href="/projects/image/{{$post->id}}/add?url={{$encodedUrl}}">
-                      <div class="add-btn"><i class="fa fa-check" aria-hidden="true"></i></div>
+                      <div class="add-btn {{in_array($post->id, $image_info_array)? 'active': ''}}"><i class="fa fa-check" aria-hidden="true"></i></div>
                     </a>
                   </div>
                   <h4>{{$post->user->username}}</h4>
