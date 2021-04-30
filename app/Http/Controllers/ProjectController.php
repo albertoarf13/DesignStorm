@@ -23,9 +23,7 @@ class ProjectController extends Controller
 
         $project = Project::where('id', $id)->first();
 
-        $images = $project->images;
-
-        return view('pages/projects/show', compact('project', 'images'));
+        return view('pages/projects/show', compact('project'));
     }
 
     public function edit(Request $request, $id){
@@ -59,7 +57,8 @@ class ProjectController extends Controller
     public function destroy($id){
 
         $project = Project::where('id', $id)->first();
-        $project->delete();
+
+        $project->deleteRelated();
 
         return redirect('/account/projects');
     }

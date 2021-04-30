@@ -20,4 +20,12 @@ class Project extends Model
     {
         return $this->hasMany(Image::class, 'project_id', 'id');
     }
+
+    public function deleteRelated(){
+
+        $this->images()->delete();
+
+        $this->delete();
+
+    }
 }

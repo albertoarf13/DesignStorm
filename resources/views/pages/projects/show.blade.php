@@ -17,14 +17,14 @@
         <div class="img-section">
             <div class="row">
 
-                @foreach($images as $image)
+                @foreach($project->images as $image)
                   
                   <div class="col-md-3">
                       <div class="box">
                           <div style="position: relative; background: url('{{$image->image_url}}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px; margin-bottom: 10px;">
                           </div>
 
-                          <a href="/projects/image/{{$image->id}}/delete" class="delete-btn">Delete</a>
+                          <a href="/projects/image/{{$image->id}}/delete" class="">Delete</a>
                       </div>
                   </div>
 

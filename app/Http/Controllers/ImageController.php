@@ -10,7 +10,7 @@ class ImageController extends Controller
 
         $data = [
             "image_url" => $request->url,
-            "project_id" => 1,
+            "project_id" => 11,
             "image_info" => $id
         ];
         
