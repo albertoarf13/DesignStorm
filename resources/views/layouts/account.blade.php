@@ -15,6 +15,7 @@
         <nav>
           <a class="active" href="/account"> <i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
           <a class="active" href="/account/projects"> <i class="fa fa-folder" aria-hidden="true"></i>Projects</a>
+          <a class="active" href="/"> <i class="fa fa-home" aria-hidden="true"></i>Home Page</a>
         </nav>
       </div>
       <div id="content-area">

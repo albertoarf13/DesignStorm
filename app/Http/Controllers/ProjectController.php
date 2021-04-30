@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
+use Illuminate\Support\Facades\Auth;
+
+
+
 class ProjectController extends Controller
 {
     public function index(){
         
-        $projects = Project::all();
+        $projects = Auth::user()->projects;
 
         return view('pages/projects/index', compact('projects'));
     }
@@ -48,6 +52,7 @@ class ProjectController extends Controller
         
         $project = new Project;
         $project->title = $request->title;
+        $project->user_id = Auth::id();
         $project->save();
 
 
@@ -57,6 +62,10 @@ class ProjectController extends Controller
     public function destroy($id){
 
         $project = Project::where('id', $id)->first();
+
+        if($project->user_id != Auth::id())
+            return redirect('/account/projects');
+
 
         $project->deleteRelated();
 
