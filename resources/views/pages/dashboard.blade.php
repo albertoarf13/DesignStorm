@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-3">
       <div class="box projects-total">
-        <h1>Projects Total </h1><span class="large-number">21</span>
+        <h1>Projects Total </h1><span class="large-number">{{$numberOfProjects}}</span>
       </div>
     </div>
   </div>
@@ -21,14 +21,31 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
 <script>
+
+fetch('/account/projects-api/all')
+  .then(response => response.json())
+  .then(data => createChart(data));
+
+  
+function createChart(data){
+
+  titlesArray = data.map( project=>{
+    return project.title;
+  });
+
+  numberOfImagesPerProject = data.map( project=>{
+    return project.numberOfImages;
+  });
+
+
   var ctx = document.getElementById("myChart").getContext('2d');
   var myChart = new Chart(ctx, {
   type: 'line',
   data: {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: titlesArray,
   datasets: [{
   label: '# of Votes',
-  data: [12, 19, 3, 5, 2, 3],
+  data: numberOfImagesPerProject,
   backgroundColor: [
   'rgba(255, 99, 132, 0.2)',
   'rgba(54, 162, 235, 0.2)',
@@ -58,6 +75,9 @@
   }
   }
   });
+}
+  
+
 </script>
 
 @endsection

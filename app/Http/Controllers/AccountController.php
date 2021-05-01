@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class AccountController extends Controller
 {
     public function __construct(){
@@ -11,7 +14,10 @@ class AccountController extends Controller
     }
 
     public function index(){
-        return view('pages/dashboard');
+
+        $numberOfProjects = Auth::user()->projects->count();
+
+        return view('pages/dashboard', compact('numberOfProjects'));
     }
 
 }

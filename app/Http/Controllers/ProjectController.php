@@ -81,4 +81,18 @@ class ProjectController extends Controller
 
     }
 
+
+    public function getAllProjects(){
+        
+        $projects = Auth::user()->projects;
+
+        foreach($projects as $project){
+            $project->numberOfImages = $project->images->count();
+            
+            unset($project->images);
+        }
+
+        return $projects;
+    }
+
 }
