@@ -59,7 +59,7 @@ class ProjectController extends Controller
         return redirect('/account/projects');
     }
 
-    public function destroy($id){
+    public function destroy(Request $request, $id){
 
         $project = Project::where('id', $id)->first();
 
@@ -68,6 +68,11 @@ class ProjectController extends Controller
 
 
         $project->deleteRelated();
+
+
+        if($request->session()->get('selected_project') == $id){
+            $request->session()->forget('selected_project');
+        }
 
         return redirect('/account/projects');
     }

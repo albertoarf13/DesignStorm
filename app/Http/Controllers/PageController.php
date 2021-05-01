@@ -40,15 +40,18 @@ class PageController extends Controller
 
         $user = Auth::user();
 
-        
-        $project = Project::where('id', $request->session()->get('selected_project'))->first();
 
         $image_info_array = [];
 
-        foreach($project->images as $image){
-            array_push($image_info_array, $image->image_info);
+        if($request->session()->get('selected_project') != NULL)
+        {
+            $project = Project::where('id', $request->session()->get('selected_project'))->first();
+    
+            foreach($project->images as $image){
+                array_push($image_info_array, $image->image_info);
+            }
         }
-
+        
 
         return view('pages/results', compact('user', 'posts', 'search', 'image_info_array'));
     }
