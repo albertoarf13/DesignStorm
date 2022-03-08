@@ -59,6 +59,16 @@
   <form method="POST" action="{{ route('login') }}">
       @csrf
 
+
+      
+      <h4 style="margin-bottom: 1em;"><strong>Usuario invitado</strong></h4>
+      <p>
+          <strong>Usuario:</strong> admin@admin.com
+      </p>
+      <p style="margin-bottom: 3em;">
+          <strong>Contraseña:</strong> 12345678
+      </p>
+
       <!-- Email Address -->
       <div>
           <x-label for="email" :value="__('Email')" />
