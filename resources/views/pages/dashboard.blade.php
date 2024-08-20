@@ -44,7 +44,7 @@ function createChart(data){
   data: {
   labels: titlesArray,
   datasets: [{
-  label: '# of Votes',
+  label: '# of Images',
   data: numberOfImagesPerProject,
   backgroundColor: [
   'rgba(255, 99, 132, 0.2)',

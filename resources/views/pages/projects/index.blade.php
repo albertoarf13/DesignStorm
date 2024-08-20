@@ -10,7 +10,7 @@
       <div class="box">
 
         <div class="row">
-          <div class="col-md-10">All of our projects</div>
+          <div class="col-md-10">Select a project to be able to save images</div>
           <div class="col-md-2"><a href="/account/projects/create">Add New Project</a></div>
         </div>
 
@@ -19,7 +19,7 @@
             <table>
               <thead>
                 <tr>
-                  <th>id</th>
+                  <th>Images</th>
                   <th>Title</th>
                   <th>Edit</th>
                   <th>Select</th>
@@ -40,7 +40,7 @@
 
 
                   <tr>
-                    <td>{{$project->id}}</td>
+                    <td>{{$project->images->count()}}</td>
                     <td><a href='/account/projects/{{$project->id}}'>{{$project->title}}</a></td>
                     <td><a href='/account/projects/{{$project->id}}/edit' class="edit-btn">Edit</a></td>
                     <td><a href='/account/projects/{{$project->id}}/select' class="{{$selected? 'select-btn-active' : 'select-btn'}}">Select</a></td>
